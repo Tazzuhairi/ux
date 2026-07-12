@@ -1,0 +1,64 @@
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-weight: 900;
+  font-size: 2rem;
+  color: var(--lss-primary-dark);
+}
+
+.stat-label {
+  display: block;
+  font-weight: 700;
+  color: var(--lss-text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.stats-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.mini-label {
+  display: block;
+  font-weight: 700;
+  color: var(--lss-text-muted);
+  font-size: 0.85rem;
+}
+
+.mini-value {
+  font-weight: 800;
+  color: var(--lss-primary-dark);
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.chart-wide {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}

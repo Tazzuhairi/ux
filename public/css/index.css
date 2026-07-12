@@ -1,0 +1,68 @@
+.start-screen {
+  background: linear-gradient(160deg, #eaf2fd 0%, #dbe8fb 100%);
+  text-align: center;
+}
+
+.logo-img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.library-name {
+  color: var(--lss-primary-dark);
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 0 0 1.5rem;
+}
+
+.welcome-title {
+  color: var(--lss-primary-dark);
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  margin: 0 0 0.5rem;
+}
+
+.welcome-subtitle {
+  color: var(--lss-text-muted);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 2.5rem;
+}
+
+.btn-start {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900;
+  font-size: 1.6rem;
+  color: #ffffff;
+  background: var(--lss-primary);
+  border: none;
+  border-radius: 20px;
+  padding: 1.2rem 3.5rem;
+  box-shadow: 0 8px 24px rgba(21, 101, 192, 0.35);
+  transition: transform 0.15s ease;
+}
+
+.btn-start .emoji {
+  font-size: 1.6rem;
+  margin-left: 0.5rem;
+}
+
+.btn-start:active {
+  transform: scale(0.97);
+}
+
+.admin-link {
+  display: inline-block;
+  margin-top: 3rem;
+  color: var(--lss-text-muted);
+  font-weight: 700;
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+.admin-link:hover {
+  opacity: 1;
+  color: var(--lss-primary-dark);
+}

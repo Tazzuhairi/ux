@@ -1,0 +1,36 @@
+.login-screen {
+  background: linear-gradient(160deg, #eaf2fd 0%, #dbe8fb 100%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.login-title {
+  color: var(--lss-primary-dark);
+  font-weight: 900;
+  font-size: 1.6rem;
+  margin: 0 0 1.5rem;
+}
+
+.login-card form {
+  text-align: right;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--lss-text-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  color: var(--lss-primary-dark);
+}

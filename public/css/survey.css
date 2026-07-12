@@ -1,0 +1,129 @@
+/* The whole survey experience: no text selection, no visible cursor -
+   matches the "kiosk mode" requirements (touch-only interaction). */
+.survey-screen,
+.result-screen {
+  background: linear-gradient(160deg, #eaf2fd 0%, #dbe8fb 100%);
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: none;
+}
+
+.progress-wrap {
+  width: 100%;
+  max-width: 560px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.progress-label {
+  display: block;
+  color: var(--lss-primary-dark);
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background: #d7e3f6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--lss-primary);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.question-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(21, 101, 192, 0.12);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.question-card.transitioning {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.question-text {
+  color: var(--lss-primary-dark);
+  font-weight: 900;
+  font-size: clamp(1.5rem, 3.2vw, 2.1rem);
+  margin: 0 0 2.5rem;
+  line-height: 1.5;
+}
+
+.answer-buttons {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.answer-btn {
+  flex: 1 1 160px;
+  max-width: 220px;
+  border: 3px solid transparent;
+  border-radius: 20px;
+  background: #f4f8fd;
+  padding: 1.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: transform 0.12s ease, border-color 0.12s ease, background 0.12s ease;
+}
+
+.answer-emoji {
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.answer-label {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #1a2433;
+}
+
+.answer-btn:active {
+  transform: scale(0.95);
+}
+
+/* Each button's accent color comes from the configured rating level
+   (--level-color, set inline by survey.js), so this works for any
+   number of levels/colors, not just a fixed good/normal/bad trio. */
+.answer-btn:hover,
+.answer-btn.tapped {
+  border-color: var(--level-color, var(--lss-primary));
+  background: color-mix(in srgb, var(--level-color, var(--lss-primary)) 12%, #ffffff);
+}
+
+/* ---------------- Result screen ---------------- */
+.result-emoji {
+  font-size: 7rem;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.result-title {
+  color: var(--lss-primary-dark);
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 0.5rem;
+}
+
+.result-subtitle {
+  color: var(--lss-text-muted);
+  font-size: 1.2rem;
+  font-weight: 600;
+}

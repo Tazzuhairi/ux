@@ -1,0 +1,189 @@
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.questions-card {
+  grid-column: 1 / -1;
+}
+
+.levels-card {
+  grid-column: 1 / -1;
+}
+
+.add-level-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.add-level-row .form-control {
+  flex: 1;
+  min-width: 120px;
+}
+
+.level-value-input {
+  max-width: 90px;
+  flex: none;
+}
+
+.level-color-input {
+  max-width: 60px;
+  flex: none;
+  padding: 0.2rem;
+  height: 42px;
+}
+
+.level-emoji-input {
+  max-width: 70px;
+  flex: none;
+  text-align: center;
+}
+
+.levels-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.level-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--lss-border);
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+}
+
+.level-item .level-swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.level-item .level-emoji {
+  font-size: 1.2rem;
+}
+
+.level-item .level-label {
+  flex: 1;
+  font-weight: 700;
+}
+
+.level-item .level-value {
+  font-weight: 800;
+  color: var(--lss-primary-dark);
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--lss-border);
+  margin: 1.25rem 0;
+}
+
+.logo-preview {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  border: 1px solid var(--lss-border);
+  border-radius: 10px;
+  padding: 0.4rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.maintenance-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.small-note {
+  font-size: 0.85rem;
+  margin-top: 0.75rem;
+}
+
+.add-question-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.add-question-row .form-control {
+  flex: 1;
+}
+
+.questions-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.question-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--lss-border);
+  border-radius: 12px;
+  padding: 0.6rem 0.8rem;
+}
+
+.question-item.disabled {
+  opacity: 0.5;
+}
+
+.question-item .q-text {
+  flex: 1;
+  font-weight: 600;
+}
+
+.question-item .q-text[contenteditable='true'] {
+  border-bottom: 1px dashed var(--lss-primary);
+  outline: none;
+}
+
+.q-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.q-actions button {
+  border: none;
+  background: #eef3fb;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  font-size: 0.95rem;
+}
+
+.q-actions button:hover {
+  background: #dfe9f8;
+}
+
+#toast {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
