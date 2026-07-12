@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>التقارير — نظام قياس رضا المستفيدين</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/report.css" />
+</head>
+<body>
+
+  <div class="admin-shell">
+    <header class="admin-topbar no-print">
+      <div class="brand">📄 التقارير</div>
+      <nav class="admin-nav">
+        <a href="dashboard.html">الرئيسية</a>
+        <a href="report.html" class="active">التقارير</a>
+        <a href="settings.html">الإعدادات</a>
+        <a href="#" id="logoutBtn">تسجيل الخروج</a>
+      </nav>
+    </header>
+
+    <div class="admin-content">
+      <div class="report-toolbar no-print">
+        <h1 class="section-title">نتائج التقييم</h1>
+        <div class="export-buttons">
+          <button id="printBtn" type="button" class="btn btn-secondary">🖨️ طباعة / PDF</button>
+          <a id="excelBtn" href="/api/reports/export/excel" class="btn btn-secondary">📊 Excel</a>
+          <a id="csvBtn" href="/api/reports/export/csv" class="btn btn-secondary">📄 CSV</a>
+        </div>
+      </div>
+
+      <p id="printHeader" class="print-only"></p>
+
+      <div class="card">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>رقم السؤال</th>
+              <th>نص السؤال</th>
+              <th>عدد الإجابات</th>
+              <th>المجموع</th>
+              <th>المتوسط</th>
+              <th>الحالة</th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/report.js"></script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>لوحة التحكم — نظام قياس رضا المستفيدين</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <div class="admin-shell">
+    <header class="admin-topbar">
+      <div class="brand">📊 لوحة التحكم</div>
+      <nav class="admin-nav">
+        <a href="dashboard.html" class="active">الرئيسية</a>
+        <a href="report.html">التقارير</a>
+        <a href="settings.html">الإعدادات</a>
+        <a href="#" id="logoutBtn">تسجيل الخروج</a>
+      </nav>
+    </header>
+
+    <div class="admin-content">
+      <h1 class="section-title">نظرة عامة</h1>
+
+      <section class="stats-grid mb-4">
+        <div class="card stat-card">
+          <span class="stat-value" id="statToday">-</span>
+          <span class="stat-label">المشاركون اليوم</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-value" id="statWeek">-</span>
+          <span class="stat-label">هذا الأسبوع (آخر 7 أيام)</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-value" id="statMonth">-</span>
+          <span class="stat-label">هذا الشهر</span>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-value" id="statOverall">-</span>
+          <span class="stat-label">مؤشر الرضا العام (من 3)</span>
+        </div>
+      </section>
+
+      <section class="stats-grid-2 mb-4">
+        <div class="card">
+          <span class="mini-label">أفضل خدمة</span>
+          <p id="bestService" class="mini-value">-</p>
+        </div>
+        <div class="card">
+          <span class="mini-label">أضعف خدمة</span>
+          <p id="weakestService" class="mini-value">-</p>
+        </div>
+        <div class="card">
+          <span class="mini-label">آخر تقييم</span>
+          <p id="lastSubmission" class="mini-value">-</p>
+        </div>
+        <div class="card">
+          <span class="mini-label">متوسط زمن الإجابة</span>
+          <p id="avgResponseTime" class="mini-value">-</p>
+        </div>
+      </section>
+
+      <section class="charts-grid">
+        <div class="card chart-card">
+          <h4 class="section-title">توزيع الرضا</h4>
+          <canvas id="pieChart" height="220"></canvas>
+        </div>
+        <div class="card chart-card">
+          <h4 class="section-title">متوسط كل سؤال</h4>
+          <canvas id="barChart" height="220"></canvas>
+        </div>
+        <div class="card chart-card chart-wide">
+          <h4 class="section-title">عدد المشاركين حسب الأيام (آخر 30 يوماً)</h4>
+          <canvas id="lineChart" height="120"></canvas>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

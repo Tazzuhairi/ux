@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>التقييم — نظام قياس رضا المستفيدين</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/survey.css" />
+</head>
+<body>
+
+  <!-- ============ QUESTION SCREEN ============ -->
+  <main id="questionScreen" class="fullscreen-page survey-screen">
+    <div class="progress-wrap">
+      <span id="progressLabel" class="progress-label">السؤال 1 من 1</span>
+      <div class="progress-track">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+    </div>
+
+    <div id="questionCard" class="question-card">
+      <p id="questionText" class="question-text">جارٍ التحميل...</p>
+
+      <div id="answerButtons" class="answer-buttons">
+        <!-- Populated dynamically by survey.js from the configured rating scale -->
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ RESULT SCREEN ============ -->
+  <section id="resultScreen" class="fullscreen-page result-screen d-none">
+    <div id="resultEmoji" class="result-emoji">😊</div>
+    <h1 class="result-title">شكراً لمشاركتك</h1>
+    <p class="result-subtitle">Your feedback matters</p>
+  </section>
+
+  <script src="js/survey.js"></script>
+</body>
+</html>

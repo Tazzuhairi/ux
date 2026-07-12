@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>الإعدادات — نظام قياس رضا المستفيدين</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/settings.css" />
+</head>
+<body>
+
+  <div class="admin-shell">
+    <header class="admin-topbar">
+      <div class="brand">⚙️ الإعدادات</div>
+      <nav class="admin-nav">
+        <a href="dashboard.html">الرئيسية</a>
+        <a href="report.html">التقارير</a>
+        <a href="settings.html" class="active">الإعدادات</a>
+        <a href="#" id="logoutBtn">تسجيل الخروج</a>
+      </nav>
+    </header>
+
+    <div class="admin-content">
+      <div id="toast" class="alert d-none"></div>
+
+      <div class="settings-grid">
+
+        <!-- ===================== Branding ===================== -->
+        <section class="card">
+          <h2 class="section-title">هوية المكتبة</h2>
+          <div class="form-group">
+            <label for="libraryName">اسم المكتبة</label>
+            <input type="text" id="libraryName" class="form-control" />
+          </div>
+          <button id="saveLibraryNameBtn" type="button" class="btn btn-primary">حفظ الاسم</button>
+
+          <hr class="divider" />
+
+          <div class="form-group">
+            <label for="logoInput">شعار المكتبة</label>
+            <img id="logoPreview" src="images/logo.png" class="logo-preview mb-2" onerror="this.style.display='none'" />
+            <input type="file" id="logoInput" accept="image/png,image/jpeg" class="form-control" />
+          </div>
+          <button id="saveLogoBtn" type="button" class="btn btn-primary">حفظ الشعار</button>
+        </section>
+
+        <!-- ===================== Survey behavior ===================== -->
+        <section class="card">
+          <h2 class="section-title">سلوك شاشة التقييم</h2>
+          <div class="form-group">
+            <label for="resultSeconds">زمن ظهور شاشة النتيجة (بالثواني)</label>
+            <input type="number" id="resultSeconds" min="1" max="60" class="form-control" />
+          </div>
+          <button id="saveResultSecondsBtn" type="button" class="btn btn-primary">حفظ</button>
+        </section>
+
+        <!-- ===================== Password ===================== -->
+        <section class="card">
+          <h2 class="section-title">تغيير كلمة المرور</h2>
+          <div class="form-group">
+            <label for="currentPassword">كلمة المرور الحالية</label>
+            <input type="password" id="currentPassword" class="form-control" />
+          </div>
+          <div class="form-group">
+            <label for="newPassword">كلمة المرور الجديدة</label>
+            <input type="password" id="newPassword" class="form-control" />
+          </div>
+          <button id="changePasswordBtn" type="button" class="btn btn-primary">تغيير كلمة المرور</button>
+        </section>
+
+        <!-- ===================== Backup / Restore / Reset ===================== -->
+        <section class="card">
+          <h2 class="section-title">النسخ الاحتياطي والصيانة</h2>
+          <div class="maintenance-row">
+            <a id="backupBtn" href="/api/settings/backup" class="btn btn-secondary">⬇️ نسخة احتياطية</a>
+            <label class="btn btn-secondary file-btn">
+              ⬆️ استعادة نسخة احتياطية
+              <input type="file" id="restoreInput" accept=".db" class="d-none" />
+            </label>
+          </div>
+          <hr class="divider" />
+          <button id="resetStatsBtn" type="button" class="btn btn-danger">🗑️ إعادة ضبط جميع الإحصاءات</button>
+          <p class="text-muted small-note">لا يؤثر على بنك الأسئلة أو حساب المسؤول أو اسم/شعار المكتبة.</p>
+        </section>
+
+        <!-- ===================== Rating scale management ===================== -->
+        <section class="card levels-card">
+          <h2 class="section-title">مقياس التقييم</h2>
+          <p class="text-muted small-note">
+            يمكنك تغيير عدد مستويات التقييم ونصوصها في أي وقت (مثلاً: جيد-مقبول-ضعيف، أو
+            ممتاز-جيد-متوسط-مقبول-ضعيف، أو موافق بشدة-موافق-محايد-...). القيمة الرقمية تُستخدم في حساب المتوسطات.
+          </p>
+
+          <div class="add-level-row">
+            <input type="text" id="newLevelLabel" class="form-control" placeholder="النص (مثال: ممتاز)" />
+            <input type="number" id="newLevelValue" class="form-control level-value-input" placeholder="القيمة" />
+            <input type="color" id="newLevelColor" class="form-control level-color-input" value="#1565c0" />
+            <input type="text" id="newLevelEmoji" class="form-control level-emoji-input" placeholder="🔵" maxlength="2" />
+            <button id="addLevelBtn" type="button" class="btn btn-primary">إضافة</button>
+          </div>
+
+          <ul id="levelsList" class="levels-list"></ul>
+          <p class="text-muted small-note">يجب أن يبقى مستويان على الأقل. استخدم الأسهم لتغيير الترتيب.</p>
+        </section>
+
+        <!-- ===================== Question management ===================== -->
+        <section class="card questions-card">
+          <h2 class="section-title">إدارة الأسئلة</h2>
+
+          <div class="add-question-row">
+            <input type="text" id="newQuestionText" class="form-control" placeholder="نص السؤال الجديد" />
+            <button id="addQuestionBtn" type="button" class="btn btn-primary">إضافة</button>
+          </div>
+
+          <ul id="questionsList" class="questions-list"></ul>
+          <p class="text-muted small-note">استخدم الأسهم لتغيير الترتيب، والمفتاح لتفعيل/تعطيل السؤال دون حذفه.</p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/settings.js"></script>
+</body>
+</html>
